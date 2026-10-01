@@ -1,0 +1,127 @@
+// full paste in case strudel doesn't save work
+
+// "happy sunny day"
+// @license CC BY-NC-SA 4.0 https://creativecommons.org/licenses/by-nc-sa/4.0/
+// @by Isaac Fischer 
+// @url https://github.com/isaacfhu/first-music-strudel
+
+setcpm(24)
+
+const sdrums = sound("bd mt [bd bd] sd, hh*8").bank("RolandTR909")
+
+const sbass = note(`<[36 - 36 [- 36]] [41 - 41 [ - 41]]
+  [43 - 43 [43]] [33 - 33 [33]]>
+  `)
+  .sound("gm_acoustic_bass")
+
+const slead = note(`<[55 52 -]*2 [57 50 -]*2 
+  [59 48 -]*2 [60 45 -]*2>,
+
+  48 50 52 [53 55 57 59 60 62]/2
+`).sound("gm_agogo")
+
+const svariation = note(`<[e5 - g5 [e5 c5]] [e5 - g5 [c6 a5]] 
+  [g5 - b5 [d6 b5]] [a5 - c6 [e6 [c6 a5]]]
+>`)
+  .sound("gm_celesta")
+  .gain(0.7)
+
+lead: slead
+
+bass: arrange(
+  [4, silence],
+  [12, sbass]
+)
+
+drums: arrange(
+  [8, silence],
+  [8, sdrums]
+)
+
+variation: arrange(
+  [8, silence],
+  [8, svariation]
+)
+
+
+/*
+
+const complete = stack(
+         slead,
+         sbass,
+         sdrums, 
+         svariation
+       )
+
+music: cat(
+      note("<[G]>")
+      .sound("gm_vibraphone"),
+      slead,
+      stack(
+         slead,
+         svariation
+       ),
+      stack(
+         slead,
+         svariation,
+         sdrums
+       ),
+      complete,complete,complete,complete
+      )
+
+_drums: sdrums
+
+_bass: sbass
+
+//_variation
+
+
+_lead: slead
+_maybe: sound("metal - jazz [hh bd] hh bd rim [hh sd]")
+
+_variation: svariation
+
+
+_hchords: note("<[E,G,B,D4] [A2,C,G,B] [B2,D#,F#,A] [D,F,G,B]>(<5!7 1>,8)")
+  .sound("triangle")
+  .lpf("1200")
+  .lpattack(0.05)
+  .release(0.2)
+  .room(0.03)
+  .delay(0.05)
+  .gain(0.4)
+
+_hbass: note("<[7 7 - [- 7 6]] [3 3 - [- 1]] [4 4 - -] [[2 -] - - <- [1 2]>]>".add(-12))
+  .scale("E:minor")
+  .sound("saw")
+  .lpf(250)
+  .lpq(3)
+  .decay(0.2)
+  .release(0.2)
+  .room(0.6)
+  .distort(0.2)
+  .orbit(1)
+
+_hdrums: sound("<[bd hh*2 - hh sd hh - hh]!7 [bd - - [bd hh]]>")
+  .bank("r8")
+  .lpf(500)
+  .crush(9)
+  .orbit(2)
+
+_hvariation: note("<[G|B] [A|C4|B4] [B|F#] <D D4>>")
+  .sound("marimba")
+  .gain(14)
+  .delay(1.2,2.5)
+  .orbit(3)
+
+
+
+_$: note("[36 34 41 39]/4").sound("piano")
+
+_$: sound(`jazz:9 jazz:1*10 
+ [jazz:6*9 jazz:2]  oh*2`)
+_$: sound("gm_applause*2 bytebeat*20 gm_pad_warm bytebeat*20")
+_$: sound("metal - jazz [hh bd] hh bd rim [hh sd]")
+_$: sound("casio insect metal jazz casio insect metal jazz casio insect metal jazz")
+
+*/ 
