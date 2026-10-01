@@ -57,3 +57,8 @@ My timelapse link (ordered by session):
 1. https://lapse.hackclub.com/timelapse/jnl-Z4R7A2fk
 2. https://lapse.hackclub.com/timelapse/ZCLT-ajB5dxO
 3. https://lapse.hackclub.com/timelapse/vCWRGViL55_i
+
+Notes: 
+<p>It was pretty hard at first but now I think I understand it better.
+There's still a bunch of stuff I don't know of/understand. 
+But I'm sure with time if I continue to use strudel I'll get better</p>
